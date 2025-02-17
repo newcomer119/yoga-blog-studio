@@ -90,6 +90,27 @@ export default {
       }
     },
     {
+      name: 'summary',
+      title: 'Summary',
+      type: 'object',
+      fields: [
+        {
+          name: 'en',
+          title: 'English',
+          type: 'text',
+          rows: 2,
+          validation: Rule => Rule.required()
+        },
+        {
+          name: 'vi',
+          title: 'Vietnamese',
+          type: 'text',
+          rows: 2,
+          validation: Rule => Rule.required()
+        }
+      ]
+    },
+    {
       name: 'features',
       title: 'Features',
       type: 'array',
