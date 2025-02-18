@@ -90,6 +90,20 @@ export default {
       }
     },
     {
+      name: 'detailsImage',
+      title: 'Detail Images',
+      type: 'array',
+      description: 'Add multiple images to show in course details',
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true
+          }
+        }
+      ]
+    },
+    {
       name: 'summary',
       title: 'Summary',
       type: 'object',
