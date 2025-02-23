@@ -90,10 +90,38 @@ export default {
       },
     },
     {
+      name: 'cost',
+      title: 'Cost Images',
+      type: 'array',
+      description: 'Add images related to course cost',
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+    },
+    {
       name: 'detailsImage',
       title: 'Detail Images',
       type: 'array',
       description: 'Add multiple images to show in course details',
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+    },
+    {
+      name: 'priceImages',
+      title: 'Price Images',
+      type: 'array',
+      description: 'Add images related to pricing and payment options',
       of: [
         {
           type: 'image',
@@ -243,7 +271,6 @@ export default {
         },
       ],
     },
-
     {
       name: 'order',
       title: 'Display Order',
