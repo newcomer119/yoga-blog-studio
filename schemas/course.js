@@ -284,6 +284,78 @@ export default {
       description: 'Set to false to hide this course',
       initialValue: true,
     },
+    {
+      name: 'testimonials',
+      title: 'Testimonials',
+      type: 'array',
+      description: 'Add testimonials for this course',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'name',
+              title: 'Name',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'course',
+              title: 'Course Name',
+              type: 'object',
+              fields: [
+                {
+                  name: 'en',
+                  title: 'English',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: 'vi',
+                  title: 'Vietnamese',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+            },
+            {
+              name: 'text',
+              title: 'Testimonial Text',
+              type: 'object',
+              fields: [
+                {
+                  name: 'en',
+                  title: 'English',
+                  type: 'text',
+                  rows: 3,
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: 'vi',
+                  title: 'Vietnamese',
+                  type: 'text',
+                  rows: 3,
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+            },
+            {
+              name: 'rating',
+              title: 'Rating',
+              type: 'number',
+              validation: (Rule) => Rule.required().min(1).max(5),
+              initialValue: 5,
+            }
+          ],
+          preview: {
+            select: {
+              title: 'name',
+              subtitle: 'course.en',
+            },
+          },
+        },
+      ],
+    },
   ],
   orderings: [
     {
